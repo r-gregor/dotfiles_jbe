@@ -1,0 +1,5 @@
+[Added Associations]
+application/x-desktop=org.xfce.mousepad.desktop;
+video/mp4=vlc.desktop;
+text/plain=libreoffice-writer.desktop;
+application/x-shellscript=vim.desktop;

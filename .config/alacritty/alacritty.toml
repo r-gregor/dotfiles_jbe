@@ -1,0 +1,42 @@
+import = ["/home/rgregor/.config/alacritty/dracula_custom-2.toml"]
+
+[font]
+size = 14.0
+
+[font.bold]
+family = "Ubuntu Mono"
+style = "Bold"
+
+[font.bold_italic]
+family = "Ubuntu Mono"
+style = "Bold Italic"
+
+[font.italic]
+family = "Ubuntu Mono"
+style = "Italic"
+
+[font.normal]
+family = "Ubuntu Mono"
+style = "Regular"
+
+[window.dimensions]
+columns = 160
+lines = 40
+
+# [window.position]
+# x = 60
+# y = 50
+
+# from:  https://alacritty.org/config-alacritty.html
+
+[window.padding]
+x = 3
+y = 1
+
+[window]
+position = "None"
+# dynamic_padding = true
+decorations = "Full"
+opacity = 1.0
+blur = true
+resize_increments = false
