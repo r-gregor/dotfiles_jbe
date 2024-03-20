@@ -342,3 +342,7 @@ nnoremap <leader>st :syntax off<CR>:syntax on<CR>
 " let g:monochrome_italic_comments = 1
 " colorscheme monochrome
 
+" 20240310
+" TO ACCEPT TERMINAL BACKGROUND IMAGE kitty.conf
+hi Normal guibg=NONE ctermbg=NONE
+
