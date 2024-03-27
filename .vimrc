@@ -1,4 +1,4 @@
-" DOMA: LAST CHANGE 20240228
+" DOMA: LAST CHANGE 20240327
 "
 " ------------------------- DEFAULT SETTINGS -----------------------------------
 set nocompatible                    " This must be first, because it changes other options as a side effect.
@@ -204,7 +204,6 @@ set wildmenu
 set wildmode=list:longest,full
 
 " ---
-"
 " added 20210622 (MY PRECIOUS!!)
 " comment/uncomment visually selected block
 " vnoremap ,pt :s@^@# @<CR>
@@ -233,6 +232,15 @@ vnoremap ,cd di<code><CR></code><CR><ESC>kP?<code><CR>:s@.*\(<code>\)@\1@<CR>/</
 
 " added 20211105 (en): shift tab and remove spaces
 vnoremap ,rr >gv:s/\(\t\+\) \+/\1/g<CR>
+
+" ---
+" added 20240327
+" clone current line or selection and:
+"        - normal mode: paste it under current line
+"        - visual selection: paste it over current line, but select lower selection block
+"
+noremap <leader>c yyp
+vnoremap <leader>c yPgv
 
 " ----------------- PLUGGINS ---------------------------------
 " Plugins (vim-plug)
