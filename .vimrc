@@ -30,6 +30,8 @@ set hidden
 set path+=**
 set background=dark
 
+filetype plugin indent on           "20240913
+
 " added 20231117: fix for disapearing bg color when scrolling!
 let &t_ut=''
 
@@ -257,7 +259,37 @@ Plug 'terryma/vim-multiple-cursors'
 
 " 20240205
 Plug 'fxn/vim-monochrome'
+
+" 20240913
+Plug 'rust-lang/rust.vim'
+
+" 20240914
+Plug 'prabirshrestha/vim-lsp'
+Plug 'mattn/vim-lsp-settings'
+Plug 'prabirshrestha/asyncomplete.vim'
+Plug 'prabirshrestha/asyncomplete-lsp.vim'
+
 call plug#end()
+
+" ###############################################################
+" copied (almost) directly from the vim-lsp docs:
+function! s:on_lsp_buffer_enabled() abort
+    setlocal omnifunc=lsp#complete
+"    setlocal signcolumn=yes
+"    if exists('+tagfunc') | setlocal tagfunc=lsp#tagfunc | endif
+"
+"    let g:lsp_format_sync_timeout = 1000
+"    autocmd! BufWritePre *.rs,*.go call execute('LspDocumentFormatSync')
+endfunction
+
+augroup lsp_install
+    au!
+    " call s:on_lsp_buffer_enabled (set the lsp shortcuts) when an lsp server
+    " is registered for a buffer.
+    autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
+augroup END
+" ###############################################################
+
 
 nnoremap <F5> :NERDTreeToggle<CR>
 
