@@ -1,6 +1,6 @@
 # vim:fileencoding=utf-8:ft=conf:foldmethod=marker
 
-#: Fonts 
+#: Fonts {{{
 
 #: kitty has very powerful font management. You can configure
 #: individual font faces and even specify special fonts for particular
@@ -162,9 +162,9 @@ box_drawing_scale 0.001, 1, 1.5, 2
 #: monitor DPI to arrive at a pixel value. There must be four values
 #: corresponding to thin, normal, thick, and very thick lines.
 
-#: 
+#: }}}
 
-#: Cursor customization 
+#: Cursor customization {{{
 
 cursor #cccccc
 
@@ -202,9 +202,9 @@ cursor_stop_blinking_after 15.0
 #: Stop blinking cursor after the specified number of seconds of
 #: keyboard inactivity.  Set to zero to never stop blinking.
 
-#: 
+#: }}}
 
-#: Scrollback 
+#: Scrollback {{{
 
 scrollback_lines 2000
 
@@ -258,9 +258,9 @@ touch_scroll_multiplier 1.0
 #: for high precision scrolling devices on platforms such as macOS and
 #: Wayland. Use negative numbers to change scroll direction.
 
-#: 
+#: }}}
 
-#: Mouse 
+#: Mouse {{{
 
 mouse_hide_wait 3.0
 
@@ -354,7 +354,7 @@ pointer_shape_when_dragging beam
 #: The default shape of the mouse pointer when dragging across text.
 #: Valid values are: arrow, beam and hand
 
-#: Mouse actions 
+#: Mouse actions {{{
 
 #: Mouse buttons can be remapped to perform arbitrary actions. The
 #: syntax for doing so is:
@@ -431,11 +431,11 @@ mouse_map shift+ctrl+alt+left triplepress ungrabbed,grabbed mouse_selection line
 #: Select from the clicked point to the end of the line
 
 mouse_map shift+right press ungrabbed,grabbed mouse_selection extend
-#: 
+#: }}}
 
-#: 
+#: }}}
 
-#: Performance tuning 
+#: Performance tuning {{{
 
 repaint_delay 10
 
@@ -464,9 +464,9 @@ sync_to_monitor yes
 #: keyboard repeat rate, you may notice some slight input latency. If
 #: so, set this to no.
 
-#: 
+#: }}}
 
-#: Terminal bell 
+#: Terminal bell {{{
 
 enable_audio_bell yes
 
@@ -493,9 +493,9 @@ command_on_bell none
 
 #: Program to run when a bell occurs.
 
-#: 
+#: }}}
 
-#: Window layout 
+#: Window layout {{{
 
 remember_window_size  yes
 initial_window_width  640
@@ -591,8 +591,7 @@ inactive_text_alpha 1.0
 #: Fade the text in inactive windows by the specified amount (a number
 #: between zero and one, with zero being fully faded).
 
-# hide_window_decorations no
-hide_window_decorations yes
+hide_window_decorations no
 
 #: Hide the window decorations (title-bar and window borders) with
 #: yes. On macOS, titlebar-only can be used to only hide the titlebar.
@@ -631,9 +630,9 @@ confirm_os_window_close 0
 #: confirmation. This confirmation also applies to requests to quit
 #: the entire application (all OS windows, via the quit action).
 
-#: 
+#: }}}
 
-#: Tab bar 
+#: Tab bar {{{
 
 tab_bar_edge bottom
 
@@ -733,17 +732,16 @@ tab_bar_background none
 #: Background color for the tab bar. Defaults to using the terminal
 #: background color.
 
-#: 
+#: }}}
 
-#: Color scheme 
+#: Color scheme {{{
 
 foreground #dddddd
 background #000000
 
 #: The foreground and background colors
 
-#: background_opacity 0.95
-background_opacity 1.0
+background_opacity 0.95
 
 #: The opacity of the background. A number between 0 and 1, where 1 is
 #: opaque and 0 is fully transparent.  This will only work if
@@ -764,24 +762,22 @@ background_opacity 1.0
 #: this setting when reloading the config will only work if
 #: dynamic_background_opacity was enabled in the original config.
 
-#: background_image none
-background_image /home/rgregor/.config/kitty/background-imgs-blured/bgimg_03.png
+background_image none
 
 #: Path to a background image. Must be in PNG format.
 
-#: background_image_layout tiled
-background_image_layout scaled
+background_image_layout tiled
 
 #: Whether to tile or scale the background image.
 
-#: background_image_linear no
-background_image_linear yes
+background_image_linear no
 
 #: When background image is scaled, whether linear interpolation
 #: should be used.
 
 # dynamic_background_opacity no
 dynamic_background_opacity yes
+
 #: Allow changing of the background_opacity dynamically, using either
 #: keyboard shortcuts (increase_background_opacity and
 #: decrease_background_opacity) or the remote control facility.
@@ -810,7 +806,7 @@ selection_background #fffacd
 
 #: The background for text selected with the mouse.
 
-#: The color table 
+#: The color table {{{
 
 #: The 256 terminal colors. There are 8 basic colors, each color has a
 #: dull and bright version, for the first 16 colors. You can set the
@@ -880,11 +876,11 @@ mark3_background #f274bc
 
 #: Color for marks of type 3 (violet)
 
-#: 
+#: }}}
 
-#: 
+#: }}}
 
-#: Advanced 
+#: Advanced {{{
 
 shell .
 
@@ -1004,9 +1000,9 @@ term xterm-kitty
 #: work. Changing this option by reloading the config will only affect
 #: newly created windows.
 
-#: 
+#: }}}
 
-#: OS specific tweaks 
+#: OS specific tweaks {{{
 
 wayland_titlebar_color system
 
@@ -1091,9 +1087,9 @@ linux_display_server auto
 #: to x11 or wayland to force the choice. Changing this setting by
 #: reloading the config is not supported.
 
-#: 
+#: }}}
 
-#: Keyboard shortcuts 
+#: Keyboard shortcuts {{{
 
 #: Keys are identified simply by their lowercase unicode characters.
 #: For example: ``a`` for the A key, ``[`` for the left square bracket
@@ -1172,7 +1168,7 @@ clear_all_shortcuts no
 #: kitty +kitten hints --hints-offset to zero for all mappings,
 #: including the builtin ones.
 
-#: Clipboard 
+#: Clipboard {{{
 
 map kitty_mod+c copy_to_clipboard
 
@@ -1199,9 +1195,9 @@ map kitty_mod+o pass_selection_to_program
 
 #:     map kitty_mod+y new_window less @selection
 
-#: 
+#: }}}
 
-#: Scrolling 
+#: Scrolling {{{
 
 map kitty_mod+up        scroll_line_up
 map kitty_mod+down      scroll_line_down
@@ -1221,9 +1217,9 @@ map kitty_mod+h         show_scrollback
 #: For more details on piping screen and buffer contents to external
 #: programs, see launch.
 
-#: 
+#: }}}
 
-#: Window management 
+#: Window management {{{
 
 map kitty_mod+enter new_window
 
@@ -1275,9 +1271,9 @@ map kitty_mod+7 seventh_window
 map kitty_mod+8 eighth_window
 map kitty_mod+9 ninth_window
 map kitty_mod+0 tenth_window
-#: 
+#: }}}
 
-#: Tab management 
+#: Tab management {{{
 
 map kitty_mod+right next_tab
 map kitty_mod+left  previous_tab
@@ -1301,9 +1297,9 @@ map kitty_mod+alt+t set_tab_title
 #: the current tab rather than at the end of the tabs list, use::
 
 #:     map ctrl+t new_tab !neighbor [optional cmd to run]
-#: 
+#: }}}
 
-#: Layout management 
+#: Layout management {{{
 
 map kitty_mod+l next_layout
 
@@ -1315,9 +1311,9 @@ map kitty_mod+l next_layout
 #: Similarly, to switch back to the previous layout::
 
 #:    map ctrl+alt+p last_used_layout
-#: 
+#: }}}
 
-#: Font sizes 
+#: Font sizes {{{
 
 #: You can change the font size for all top-level kitty OS windows at
 #: a time or only the current one.
@@ -1334,9 +1330,9 @@ map kitty_mod+backspace change_font_size all 0
 #: size::
 
 #:     map kitty_mod+f6 change_font_size current 10.0
-#: 
+#: }}}
 
-#: Select and act on visible text 
+#: Select and act on visible text {{{
 
 #: Use the hints kitten to select text and either pass it to an
 #: external program or insert it into the terminal or copy it to the
@@ -1385,9 +1381,9 @@ map kitty_mod+p>y kitten hints --type hyperlink
 
 #: The hints kitten has many more modes of operation that you can map
 #: to different shortcuts. For a full description see kittens/hints.
-#: 
+#: }}}
 
-#: Miscellaneous 
+#: Miscellaneous {{{
 
 map kitty_mod+f11    toggle_fullscreen
 map kitty_mod+f10    toggle_maximized
@@ -1473,8 +1469,8 @@ map kitty_mod+f6 debug_config
 #:     map ctrl+alt+a send_text normal Word\x1b[H
 #:     map ctrl+alt+a send_text application Word\x1bOH
 
-#: 
+#: }}}
 
-#: 
+#: }}}
 include ./theme.conf
 
