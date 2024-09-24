@@ -36,7 +36,8 @@ y = 1
 [window]
 position = "None"
 # dynamic_padding = true
-decorations = "Full"
+# decorations = "Full"
+decorations = "None"
 opacity = 1.0
 blur = true
 resize_increments = false
