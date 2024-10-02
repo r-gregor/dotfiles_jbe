@@ -209,7 +209,7 @@ for_window [class="Pavucontrol" instance="pavucontrol"] floating enable
 # exec --no-startup-id nitrogen --restore
 
 # feh
-exec --no-startup-id /usr/bin/feh --bg-scale "/home/rgregor/majstaf/majvolpejpers/majvolpejpers_bob2/mayo.jpg" &
+exec --no-startup-id /usr/bin/feh --bg-scale "/home/rgregor/majstaf/majvolpejpers/majvolpejpers_bob2/mayo.jpg"
 
 # 20230117 bind volpejpersafler to WIN+c:
 bindsym $mod+c exec --no-startup-id /home/rgregor/.local/bin/volpejprsafler
