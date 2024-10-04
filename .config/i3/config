@@ -52,12 +52,12 @@ floating_modifier $alt
 tiling_drag modifier titlebar
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+# bindsym $mod+Return exec i3-sensible-terminal
 
 # start browser (Firefox)
 bindsym $mod+b exec --no-startup-id /usr/bin/firefox
 bindsym $mod+g exec --no-startup-id /usr/bin/google-chrome-stable
-
+bindsym $mod+Return exec --no-startup-id /usr/bin/alacritty
 
 # kill focused window
 bindsym $mod+q kill
