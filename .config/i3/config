@@ -121,6 +121,10 @@ bindsym $mod+a focus parent
 # focus the child container
 #bindsym $mod+d focus child
 
+
+# dmenu logout menu
+bindsym $alt+l exec --no-startup-id /home/rgregor/.local/bin/logout_menu_dmn
+
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
 set $ws1 "1"
