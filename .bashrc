@@ -130,5 +130,4 @@ source /home/rgregor/majstaf/majrcs/xcol_bash.sh
 
 eval "$(starship init bash)"
 # starship preset pastel-powerline -o ~/.config/starship.toml
-starship preset gruvbox-rainbow -o ~/.config/starship.toml
-
+starship preset gruvbox-rainbow -o ~/.config/starship/starship.toml
