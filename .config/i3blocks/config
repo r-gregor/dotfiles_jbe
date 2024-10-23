@@ -57,11 +57,11 @@ command=$SCRIPT_DIR/memory/memory
 separator=true
 interval=30
 
-[memory]
-label=SWAP
-instance=swap
-separator=false
-interval=30
+# [memory]
+# label=SWAP
+# instance=swap
+# separator=false
+# interval=30
 
 # Disk usage
 #
