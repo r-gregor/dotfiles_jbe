@@ -202,7 +202,7 @@ bindsym $mod+r mode "resize"
 
 # added 20240924
 gaps inner 15px
-gaps outer 5px
+gaps outer 1px
 
 # retain floating mode 20240924
 for_window [class="Nm-connection-editor" instance="nm-connection-editor"] floating enable
@@ -239,12 +239,12 @@ bindsym Control+k exec --no-startup-id kty
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
-bar {
-        font pango:RobotoMono Nerd Font 12
-        # status_command i3status
-        # status_command i3blocks
-        status_command SCRIPT_DIR=~/.config/i3blocks/scripts/ i3blocks
-}
+# bar {
+#         font pango:RobotoMono Nerd Font 12
+#         # status_command i3status
+#         # status_command i3blocks
+#         status_command SCRIPT_DIR=~/.config/i3blocks/scripts/ i3blocks
+# }
 
 # 20240930 -- borders
 default_border pixel 3
@@ -256,4 +256,6 @@ client.urgent               #353439 #ffffff #7B9F35
 focus_follows_mouse yes
 hide_edge_borders both
 
-# # ---
+# polybar 20241104
+exec --no-startup-id /home/rgregor/.config/polybar/launch.sh.original &
+
