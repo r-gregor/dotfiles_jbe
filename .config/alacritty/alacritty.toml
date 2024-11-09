@@ -1,24 +1,24 @@
 general.import = ["/home/rgregor/.config/alacritty/dracula_custom-2.toml"]
 
 [font]
-size = 14.0
+size = 12.0
 
 [font.bold]
-family = "UbuntuMono Nerd Font Mono"
+family = "Iosevka Nerd Font Mono"
 # family = "MesloLGS Nerd Font Mono"
-# family = "RobotoMono Nerd Font Mono"
+# family = "Iosevka Nerd Font Mono"
 style = "Bold"
 
 [font.italic]
-family = "UbuntuMono Nerd Font Mono"
+family = "Iosevka Nerd Font Mono"
 # family = "MesloLGS Nerd Font Mono"
-# family = "RobotoMono Nerd Font Mono"
+# family = "Iosevka Nerd Font Mono"
 style = "Italic"
 
 [font.normal]
-family = "UbuntuMono Nerd Font Mono"
+family = "Iosevka Nerd Font Mono"
 # family = "MesloLGS Nerd Font Mono"
-# family = "RobotoMono Nerd Font Mono"
+# family = "Iosevka Nerd Font Mono"
 style = "Regular"
 
 [window.dimensions]
@@ -40,6 +40,7 @@ position = "None"
 # dynamic_padding = true
 # decorations = "Full"
 decorations = "Full"
-opacity = 1.0
+opacity = 0.9
 blur = true
 resize_increments = false
+
