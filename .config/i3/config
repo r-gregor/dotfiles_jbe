@@ -273,3 +273,8 @@ hide_edge_borders both
 # polybar 20241104
 exec --no-startup-id /home/rgregor/.config/polybar/launch.sh
 
+# dunst 20241118
+exec --no-startup-id dunst
+
+
+
