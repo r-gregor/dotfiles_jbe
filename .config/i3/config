@@ -107,6 +107,9 @@ bindsym $alt+Ctrl+Left workspace prev
 bindsym $alt+Ctrl+n workspace next
 bindsym $alt+Ctrl+p workspace prev
 
+# switching displays -- toggle
+bindsym $mod+x focus output eDP HDMI-A-0
+
 # split in horizontal orientation
 bindsym $alt+h split h
 
