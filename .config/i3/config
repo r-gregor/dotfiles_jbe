@@ -214,8 +214,8 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # added 20240924
-gaps inner 15px
-gaps outer 1px
+gaps inner 25px
+gaps outer 5px
 
 # retain floating mode 20240924
 for_window [class="Nm-connection-editor" instance="nm-connection-editor"] floating enable
