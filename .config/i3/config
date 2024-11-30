@@ -93,7 +93,6 @@ bindsym $mod+Shift+h move left
 bindsym $mod+Shift+j move down
 bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
-# bindsym $mod+Shift+ccaron move right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
@@ -135,7 +134,6 @@ bindsym $mod+a focus parent
 
 # focus the child container
 #bindsym $mod+d focus child
-
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
@@ -225,6 +223,10 @@ for_window [class="System-config-printer.py" instance="system-config-printer"] f
 for_window [class="Xfce4-settings-manager" instance="xfce4-settings-manager"] floating enable
 for_window [class="Lxtask" instance="lxtask"] floating enable
 for_window [class="Pavucontrol" instance="pavucontrol"] floating enable
+for_window [class="ColorPicker" instance="colorPicker"] floating enable
+for_window [class="vlc" instance="vlc"] floating enable
+for_window [class="Transmission-gtk" instance="transmission-gtk"] floating enable
+
 
 # 20240927 run scripts
 # exec_always --no-startup-id $HOME/.config/i3/scripts/YOUR_SCRIPT.sh
@@ -266,10 +268,13 @@ exec_always --no-startup-id lxpolkit
 # 20240930 -- borders
 default_border pixel 0
 
-client.focused              #353439 #ffffff #7B9F35
-client.unfocused            #353439 #333333 #7B9F35
-client.focused_inactive     #353439 #ffffff #7B9F35
-client.urgent               #353439 #ffffff #7B9F35
+set $transp #00000000
+
+# class                     border    background    text     indicator  child_border
+client.focused              #57a4df   #57a4df       #57a4df  #57a4df    #57a4df
+client.unfocused            #000000   #333333       #7B9F35  #7B9F35    #transp
+client.focused_inactive     #000000   #ffffff       #7B9F35  #7B9F35    #transp
+client.urgent               #353439   #ffffff       #7B9F35  #7B9F35    #transp
 focus_follows_mouse yes
 hide_edge_borders both
 
