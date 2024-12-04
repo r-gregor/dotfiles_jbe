@@ -26,6 +26,7 @@ configuration {
     border-radius:    6;
     border-color:     @bordercolor;
     padding:          15;
+    transparency:     "real";
 }
 #mainbox {
     border:  0;
