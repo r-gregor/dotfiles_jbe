@@ -33,7 +33,7 @@ lines = 40
 
 [window.padding]
 x = 10
-y = 5
+y = 10
 
 [window]
 position = "None"
