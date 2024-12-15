@@ -269,10 +269,11 @@ exec_always --no-startup-id lxpolkit
 # 20240930 -- borders
 default_border pixel 0
 
-set $transp #00000000
+# set $transp #00000000
+set $transp #00272727
 
 # class                     border    background    text     indicator  child_border
-client.focused              #57a4df   #57a4df       #57a4df  #57a4df    #57a4df
+client.focused              #57a4df   #transp       #57a4df  #57a4df    #57a4df
 client.unfocused            #000000   #333333       #7B9F35  #7B9F35    #transp
 client.focused_inactive     #000000   #ffffff       #7B9F35  #7B9F35    #transp
 client.urgent               #353439   #ffffff       #7B9F35  #7B9F35    #transp
