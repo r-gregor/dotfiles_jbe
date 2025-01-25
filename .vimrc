@@ -326,6 +326,7 @@ nnoremap <leader>s :s/ *;*$/;/<esc>j
 " colorscheme codedark
 
 ab cstrt #include <stdio.h><CR>#include <string.h><CR><CR><CR>int main(int argc, char **argv<right> {<CR><CR><CR><CR><TAB>return 0;<CR><ESC>4ki
+ab tb :below terminal
 
 " break the sentence at word beginning at 110 chars
 " and movi the beginning of the rest to thr next line
