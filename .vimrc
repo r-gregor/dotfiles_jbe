@@ -86,15 +86,29 @@ let g:lightline = {
       \ 'colorscheme': 'dracula',
       \ }
 
-" ----------------- ABBREVIATIONS -----------------------------------
-ab sbng #! /usr/bin/env bash<cr><cr>### Name:<tab>Scriptname ...<cr>### Author:<tab>Author ... <cr>### Date:<tab> <cr>### Decription:<cr>### <cr>### <cr>### <cr> 
+" ----------------- ABBREVIATIONS 01 ---------------------------
+ab sbng #! /usr/bin/env bash<cr><cr>### Name:<tab>Scriptname ...<cr>### Author:<tab>Author ... <cr>### Date:<tab> <cr>### Decription:<cr>### <cr>### <cr>### <cr><esc>:so ~/.vimrc | :set syntax=bash
 " ab grv ${gr_} 
-ab ptn3 #! /usr/bin/env python3<cr># -*- coding: utf-8 -*-<cr><cr>
+ab pt3 #! /usr/bin/env python3<cr># -*- coding: utf-8 -*-<cr><cr><esc>:so ~/.vimrc | :set syntax=python
+ab sout System.out.println(
+ab zst const std = @import("std");<cr><cr>pub fn main() !void {<cr>const out = std.io.getStdOut().writer();<cr>const in = std.io.getStdiIn().reader();<cr><cr>try out.print("I'm Alive!\n", .{});<cr><cr>}<cr><esc>:so ~/.vimrc | :set syntax=zig
+
+" ----------------- ENCLOSING BRACKETS/SQUARE/CURLY ------------
 "inoremap ${ ${}<Left>
-inoremap ${ ${}<ESC>hli
-inoremap {  {}<ESC>hli
-inoremap (  ()<ESC>hli
-inoremap [  []<ESC>hli
+inoremap ${{ ${}<ESC>hli
+inoremap {{ {}<ESC>hli
+inoremap (( ()<ESC>hli
+inoremap [[ []<ESC>hli
+
+" ----------------- ABBREVIATIONS -----------------------------------
+" ab sbng #! /usr/bin/env bash<cr><cr>### Name:<tab>Scriptname ...<cr>### Author:<tab>Author ... <cr>### Date:<tab> <cr>### Decription:<cr>### <cr>### <cr>### <cr> 
+" " ab grv ${gr_} 
+" ab ptn3 #! /usr/bin/env python3<cr># -*- coding: utf-8 -*-<cr><cr>
+" "inoremap ${ ${}<Left>
+" inoremap ${ ${}<ESC>hli
+" inoremap {  {}<ESC>hli
+" inoremap (  ()<ESC>hli
+" inoremap [  []<ESC>hli
 
 " ----------------- QUOTING: automatic ------------------------------
 " 20201224: add/remove quotes arround the word:
@@ -325,7 +339,7 @@ nnoremap <leader>s :s/ *;*$/;/<esc>j
 " from Plugin vim-code-dark
 " colorscheme codedark
 
-ab cstrt #include <stdio.h><CR>#include <string.h><CR><CR><CR>int main(int argc, char **argv<right> {<CR><CR><CR><CR><TAB>return 0;<CR><ESC>4ki
+ab cstrt #include <stdio.h><CR>#include <string.h><CR><CR><CR>int main(int argc, char **argv<right> {<CR><CR><CR><CR><TAB>return 0;<CR><ESC>:so ~/.vimrc | :set syntax=c | :norm 4ki
 ab tb :below terminal
 
 " break the sentence at word beginning at 110 chars
@@ -386,4 +400,9 @@ nnoremap <leader>st :syntax off<CR>:syntax on<CR>
 " 20240310
 " TO ACCEPT TERMINAL BACKGROUND IMAGE kitty.conf
 hi Normal guibg=NONE ctermbg=NONE
+
+
+" 20250314
+" move line under the cursor inside []
+noremap ,ss 0vg_xi[<c-r>"]<esc>j<cr>
 
