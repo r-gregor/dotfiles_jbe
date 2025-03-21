@@ -13,8 +13,8 @@ set shiftwidth=4
 set noexpandtab
 set smartindent
 set laststatus=2
-set t_Co=256
 set nohlsearch
+set t_Co=256
 syntax on
 set termguicolors                   " added 20220922 to enable Hex color codes
 set number
@@ -86,30 +86,58 @@ let g:lightline = {
       \ 'colorscheme': 'dracula',
       \ }
 
-" ----------------- ABBREVIATIONS 01 ---------------------------
-ab sbng #! /usr/bin/env bash<cr><cr>### Name:<tab>Scriptname ...<cr>### Author:<tab>Author ... <cr>### Date:<tab> <cr>### Decription:<cr>### <cr>### <cr>### <cr><esc>:so ~/.vimrc | :set syntax=bash
-" ab grv ${gr_} 
-ab pt3 #! /usr/bin/env python3<cr># -*- coding: utf-8 -*-<cr><cr><esc>:so ~/.vimrc | :set syntax=python
-ab sout System.out.println(
-ab zst const std = @import("std");<cr><cr>pub fn main() !void {<cr>const out = std.io.getStdOut().writer();<cr>const in = std.io.getStdiIn().reader();<cr><cr>try out.print("I'm Alive!\n", .{});<cr><cr>}<cr><esc>:so ~/.vimrc | :set syntax=zig
+" ############################################################################################################
+"
+" ----------------- SYNTAX SETUP MAPPINGS ----------------------
+noremap ,stb :so ~/.vimrc <bar> :set syntax=bash<CR>
+noremap ,stz :so ~/.vimrc <bar> :set syntax=zig<CR>
+noremap ,stp :so ~/.vimrc <bar> :set syntax=python<CR>
+noremap ,stc :so ~/.vimrc <bar> :set syntax=c<CR>
+noremap ,stj :so ~/.vimrc <bar> :set syntax=java<CR>
 
+" ----------------- ABBREVIATIONS 01 ---------------------------
+ab sbng #! /usr/bin/env bash<cr><cr><esc>:so ~/.vimrc <bar> :set syntax=bash
+ab pt3 #! /usr/bin/env python3<cr># -*- coding: utf-8 -*-<cr><cr><esc>:so ~/.vimrc <bar> :set syntax=python
+ab zst const std = @import("std");<cr><cr>pub fn main() !void {<cr>const out = std.io.getStdOut().writer();<cr>const in = std.io.getStdiIn().reader();<cr><cr>try out.print("I'm Alive!\n", .{});<cr><cr>}<cr><esc>:so ~/.vimrc <bar> :set syntax=zig
+ab tb :below terminal
+"
 " ----------------- ENCLOSING BRACKETS/SQUARE/CURLY ------------
-"inoremap ${ ${}<Left>
 inoremap ${{ ${}<ESC>hli
 inoremap {{ {}<ESC>hli
 inoremap (( ()<ESC>hli
 inoremap [[ []<ESC>hli
+inoremap [[[ [[]]<ESC>hli
+"
+" ------------- C ABBREVIATIONS ------------------------------
+" update 20250321
+ab cstv #include <stdio.h><CR>#include <string.h><CR><CR><CR>int main(void)<right> {<CR><CR><CR><CR><CR>return 0;<CR>}<ESC>4ki<TAB>printf("I'm Alive");<ESC>:so ~/.vimrc <bar> :set syntax=c
+ab cst #include <stdio.h><CR>#include <string.h><CR><CR><CR>int main(int argc, char **argv)<right> {<CR><CR><CR><CR><CR>return 0;<CR>}<ESC>4ki<TAB>printf("I'm Alive");<ESC>:so ~/.vimrc <bar> :set syntax=c
+""
+" break line at position 110 chars
+" 0110lbikba
+nnoremap ,b 0110lbi<BS><CR><ESC>
+"
+" abbreviations for java 20220830
+" ------------- JAVA ABBREVIATIONS ------------------------------
+iab psvm <TAB>public static void main(String[<Right><Space>args<Right><Space>{<CR><CR><CR><Right><Space>// end main<ESC>kki<CR>
+inoremap sout System.out.println("");<ESC>hhi
 
-" ----------------- ABBREVIATIONS -----------------------------------
-" ab sbng #! /usr/bin/env bash<cr><cr>### Name:<tab>Scriptname ...<cr>### Author:<tab>Author ... <cr>### Date:<tab> <cr>### Decription:<cr>### <cr>### <cr>### <cr> 
-" " ab grv ${gr_} 
-" ab ptn3 #! /usr/bin/env python3<cr># -*- coding: utf-8 -*-<cr><cr>
-" "inoremap ${ ${}<Left>
-" inoremap ${ ${}<ESC>hli
-" inoremap {  {}<ESC>hli
-" inoremap (  ()<ESC>hli
-" inoremap [  []<ESC>hli
+" ------------- PYTHON ABBREVIATIONS ----------------------------
+iab inm if __name__ == '__main__':<CR>
+"
+" 20250314
+" move line under the cursor inside []
+noremap ,ss 0vg_xi[<c-r>"]<esc>j<cr>
+"
+" mapping to insert file search
+inoremap <C-f> <C-x><C-f>
+"
+" 20250314
+" move line under the cursor inside []
+noremap ,ss 0vg_xi[<c-r>"]<esc>j<cr>
 
+" ############################################################################################################
+"
 " ----------------- QUOTING: automatic ------------------------------
 " 20201224: add/remove quotes arround the word:
 " Quote a word consisting of letters from iskeyword.
@@ -339,8 +367,6 @@ nnoremap <leader>s :s/ *;*$/;/<esc>j
 " from Plugin vim-code-dark
 " colorscheme codedark
 
-ab cstrt #include <stdio.h><CR>#include <string.h><CR><CR><CR>int main(int argc, char **argv<right> {<CR><CR><CR><CR><TAB>return 0;<CR><ESC>:so ~/.vimrc | :set syntax=c | :norm 4ki
-ab tb :below terminal
 
 " break the sentence at word beginning at 110 chars
 " and movi the beginning of the rest to thr next line
