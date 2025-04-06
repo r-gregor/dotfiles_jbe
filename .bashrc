@@ -32,7 +32,7 @@ shopt -s checkwinsize
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
 # set variable identifying the chroot you work in (used in the prompt below)
-if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
+if [ -z "${debian-chroot:-}" ] && [ -r /etc/debian_chroot ]; then
     debian_chroot=$(cat /etc/debian_chroot)
 fi
 
@@ -118,13 +118,13 @@ if ! shopt -oq posix; then
 fi
 
 # --- added 20230123
-source /home/rgregor/majstaf/majrcs/aliases_jbez0rg
-# source /home/rgregor/majstaf/majrcs/aliases_jbez0rg_fish
+source /home/rgregor/majstaf/majrcs/aliases-jbez0rg
+# source /home/rgregor/majstaf/majrcs/aliases-jbez0rg-fish
 source /home/rgregor/majstaf/majrcs/barve
-source /home/rgregor/majstaf/majrcs/bashrc_jbez0rg
+source /home/rgregor/majstaf/majrcs/bashrc-jbez0rg
 source /home/rgregor/majstaf/majrcs/funclist
 source /home/rgregor/majstaf/majrcs/peesena
-source /home/rgregor/majstaf/majrcs/vars_jbez0rg
+source /home/rgregor/majstaf/majrcs/vars-jbez0rg
 source /home/rgregor/majstaf/majrcs/xcol_bash.sh
 
 . "$HOME/.cargo/env"
@@ -135,5 +135,5 @@ source /home/rgregor/majstaf/majrcs/xcol_bash.sh
 #   starship preset gruvbox-rainbow -o ~/.config/starship/starship.toml
 
 
-source ~/majstaf/majrcs/bashrc_nerd_jbez0rg
+source ~/majstaf/majrcs/bashrc-nerd-jbez0rg
 
