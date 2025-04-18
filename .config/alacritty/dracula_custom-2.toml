@@ -41,7 +41,8 @@ background = "#070913"
 foreground = "#dddddd"
 
 [colors.search.focused_match]
-background = "0xffb86c"
+# background = "0xffb86c"
+background = "0x2b3452"
 foreground = "0x44475a"
 
 # [colors.search.footer_bar]
