@@ -137,3 +137,6 @@ source /home/rgregor/majstaf/majrcs/xcol_bash.sh
 
 source ~/majstaf/majrcs/bashrc-nerd-jbez0rg
 
+# 20250424
+eval "$(zoxide init bash)"
+
