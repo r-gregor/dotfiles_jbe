@@ -432,3 +432,10 @@ hi Normal guibg=NONE ctermbg=NONE
 " move line under the cursor inside []
 noremap ,ss 0vg_xi[<c-r>"]<esc>j<cr>
 
+" 20250515
+" copy http link into the [number] holder for the link after lynxd-ed document
+" 1 - go inside '[' ']'
+" 2 - <c-o> to go to coresponding link at the bottom
+" 3 - pres ,lc to do the magic ...
+noremap ,lc fhvg_y<C-o>ci[<C-r>0<ESC>
+
