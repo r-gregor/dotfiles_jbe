@@ -60,11 +60,14 @@ tiling_drag modifier titlebar
 
 # start browser (Firefox)
 bindsym $mod+b exec --no-startup-id /usr/bin/firefox
+bindsym $mod+$alt+b workspace number $ws2; exec --no-startup-id /usr/bin/firefox
 bindsym $mod+g exec --no-startup-id /usr/bin/google-chrome-stable
 bindsym $mod+Return exec --no-startup-id /usr/bin/alacritty
 bindsym $alt+Return exec --no-startup-id /usr/bin/kitty
 # bindsym $mod+Return exec --no-startup-id /usr/bin/kitty
 bindsym $mod+t exec --no-startup-id /usr/bin/thunar
+bindsym $mod+$alt+w workspace number $ws3; exec --no-startup-id /usr/bin/thunar
+# bindsym $mod+$alt+d workspace number $ws3; exec --no-startup-id /usr/bin/doublecmd
 
 # kill focused window
 bindsym $mod+q kill
