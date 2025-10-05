@@ -439,3 +439,7 @@ noremap ,ss 0vg_xi[<c-r>"]<esc>j<cr>
 " 3 - pres ,lc to do the magic ...
 noremap ,lc fhvg_y<C-o>ci[<C-r>0<ESC>
 
+" for 'gq+ command 20251005:
+set textwidth=110
+set formatoptions-=t
+
