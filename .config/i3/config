@@ -254,7 +254,6 @@ bindsym $alt+r exec --no-startup-id /home/rgregor/.local/bin/logout-menu-rofi
 bindsym $alt+s exec --no-startup-id /home/rgregor/.local/bin/binds-from-i3
 bindsym $alt+f exec --no-startup-id /home/rgregor/.local/bin/floatings-dmn
 bindsym $alt+t exec --no-startup-id /home/rgregor/.local/bin/floatings-rofi
-bindsym Control+k exec --no-startup-id kty
 bindsym $alt+z exec --no-startup-id /usr/bin/zenity --calendar
 bindsym $alt+w exec --no-startup-id /usr/bin/thunar
 # enable enter password window
