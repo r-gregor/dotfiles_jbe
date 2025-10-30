@@ -135,7 +135,8 @@ source /home/rgregor/majstaf/majrcs/xcol_bash.sh
 #   starship preset gruvbox-rainbow -o ~/.config/starship/starship.toml
 
 
-source ~/majstaf/majrcs/bashrc-nerd-jbez0rg
+# source ~/majstaf/majrcs/bashrc-nerd-jbez0rg
+source ~/majstaf/majrcs/bashrc-prompt-bare-jbez0rg
 
 # 20250424
 eval "$(zoxide init bash)"
