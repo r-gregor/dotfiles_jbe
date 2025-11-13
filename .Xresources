@@ -1,8 +1,10 @@
 !! Colorscheme
 
 ! added 20251112
-#include "./.urxvt-colors-default-1"
-!#include "./.urxvt-colors-Dracula-1"
+#include "./.urxvt/themes/urxvt-colors-default-1"
+!#include "./.urxvt/themes/urxvt-colors-Dracula-1"
+!#include "./.urxvt/themes/urxvt-colors-catppuccin-mocha"
+
 !! URxvt Appearance
 URxvt.font: xft:UbuntuMono Nerd Font Mono:style=Regular:size=16:antialias=true
 !URxvt.boldFont: xft:UbuntuMono Nerd Font:style=Bold:size=14:antialias=true
@@ -52,4 +54,12 @@ URxvt.keysym.M-u: perl:url-select:select_next
 URxvt.urlLauncher: firefox
 URxvt.underlineURLs: true
 URxvt.urlButton: 1
+
+!Transparency added 20251113
+!from: https://ctkarch.org/documentation/tutorials/tuto.php?page=urxvt-transpa.xml
+!real transparency
+urxvt*depth: 32urxvt*depth: 32
+
+! same color as for background in theme ...
+URxvt.background: [90]#141c21
 
