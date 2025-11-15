@@ -1,4 +1,4 @@
-general.import = ["/home/rgregor/.config/alacritty/dracula_custom-2.toml"]
+general.import = ["/home/rgregor/.config/alacritty/dracula_custom-3.toml"]
 
 [font]
 size = 12.0
