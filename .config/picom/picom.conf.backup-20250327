@@ -316,12 +316,10 @@ use-damage = true;
 #
 # @include "extra.conf"
 opacity-rule = [
-  "75:class_g = 'Alacritty' && focused",
-  "60:class_g = 'Alacritty' && !focused",
-  "75:class_g = 'kitty' && focused",
-  "60:class_g = 'kitty' && !focused",
-  "75:class_g = 'URxvt' && focused",
-  "60:class_g = 'URxvt' && !focused"
+  "98:class_g = 'Alacritty' && focused",
+  "70:class_g = 'Alacritty' && !focused",
+  "95:class_g = 'kitty' && focused",
+  "70:class_g = 'kitty' && !focused"
 ];
 
 rounded-corners-exclude = [
