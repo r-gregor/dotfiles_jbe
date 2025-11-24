@@ -9,7 +9,8 @@ white = "0xe6e6e6"
 yellow = "0xf4f99d"
 
 [colors.cursor]
-cursor = "CellForeground"
+# cursor = "CellForeground"
+cursor = "0xdb310b"
 text = "CellBackground"
 
 [colors.dim]

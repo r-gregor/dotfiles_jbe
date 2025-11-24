@@ -44,3 +44,6 @@ opacity = 0.9
 blur = true
 resize_increments = false
 
+[cursor]
+style.shape = "Block"
+style.blinking = "ALways"
