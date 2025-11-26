@@ -46,4 +46,4 @@ resize_increments = false
 
 [cursor]
 style.shape = "Block"
-style.blinking = "ALways"
+style.blinking = "Always"
