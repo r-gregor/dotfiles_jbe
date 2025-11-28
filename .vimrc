@@ -448,3 +448,8 @@ set formatoptions-=t
 " open all buffers into separate tabs
 map ,bt :bufdo tab split<CR><CR>
 
+
+" 20251127
+" table row dividers
+noremap ,tr 0yyjp}P<ESC>j
+
