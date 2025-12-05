@@ -395,7 +395,8 @@ nnoremap <Space>4 :s/^\$ /$> /<CR><CR>
 vnoremap <Space>4 :s/^\$ /$> /<CR><CR>
 
 nnoremap <leader>n :NERDTree<CR>
-nnoremap <leader>f :FZF<CR>
+nnoremap <leader>ff :FZF<CR>
+nnoremap <leader>fe :FZF -e<CR>
 
 " abbreviations fo java 20220830
 iab psvm <TAB>public static void main(String[<Right><Space>args<Right><Space>{<CR><CR><CR><Right><Space>// end main<ESC>kki<CR>
@@ -452,4 +453,8 @@ map ,bt :bufdo tab split<CR><CR>
 " 20251127
 " table row dividers
 noremap ,tr 0yyjp}P<ESC>j
+
+" 20251205
+" move '{' after 'func() '
+noremap <space>f jddkA {<ESC>j
 
