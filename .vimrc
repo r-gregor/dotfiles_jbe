@@ -444,11 +444,9 @@ noremap ,lc fhvg_y<C-o>ci[<C-r>0<ESC>
 set textwidth=110
 set formatoptions-=t
 
-
 " 20251114
 " open all buffers into separate tabs
 map ,bt :bufdo tab split<CR><CR>
-
 
 " 20251127
 " table row dividers
@@ -457,4 +455,12 @@ noremap ,tr 0yyjp}P<ESC>j
 " 20251205
 " move '{' after 'func() '
 noremap <space>f jddkA {<ESC>j
+
+" 20251210
+noremap <space>ss :set syntax=<CR>
+noremap <space>ssc :set syntax=c<CR>
+noremap <space>sst :set syntax=text<CR>
+noremap <space>ssj :set syntax=java<CR>
+noremap <space>ssp :set syntax=python<CR>
+noremap <space>ssg :set syntax=go<CR>
 
