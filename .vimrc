@@ -469,6 +469,7 @@ noremap <space>ssg :set syntax=go<CR>
 " replace 4 spaces with tabs
 nnoremap <space>= 0Vf{%=gv:s/\(\t\+\) \+/\1/g<CR>
 
-" 20260114
-nnoremap <space>v :so ~/.vimrc <BAR> set syntax=c<CR>
+" 20260114 --> 20260119
+" nnoremap <space>v :so ~/.vimrc <BAR> set syntax=c<CR>
+nnoremap <space>v :so ~/.vimrc <BAR> set syntax=c <BAR> :noh<CR>
 
