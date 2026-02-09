@@ -473,3 +473,7 @@ nnoremap <space>= 0Vf{%=gv:s/\(\t\+\) \+/\1/g<CR>
 " nnoremap <space>v :so ~/.vimrc <BAR> set syntax=c<CR>
 nnoremap <space>v :so ~/.vimrc <BAR> set syntax=c <BAR> :noh<CR>
 
+" 20260209
+" put selected text into []
+vnoremap ,bp xi[]<ESC>h""p<ESC>
+
