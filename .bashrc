@@ -14,8 +14,14 @@ HISTCONTROL=ignoreboth
 
 # append to the history file, don't overwrite it
 shopt -s histappend
-shopt -s direxpand # 20250221
-shopt -s globstar  # 20251211
+
+# enable globstar (** matching)
+shopt -s globstar
+
+# 20260227
+# enable expansions of directories as env variables
+# vim $DIRNAME/<tab><tab> (must insert trailnig '/')
+shopt -s direxpand
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
 HISTSIZE=10000
