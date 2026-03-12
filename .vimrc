@@ -459,6 +459,7 @@ noremap <space>f jddkA {<ESC>
 
 " 20251210
 noremap <space>ss :set syntax=<CR>
+noremap <space>ssh :set syntax=sh<CR>
 noremap <space>ssc :set syntax=c<CR>
 noremap <space>sst :set syntax=text<CR>
 noremap <space>ssj :set syntax=java<CR>
