@@ -1,4 +1,4 @@
-" DOMA: LAST CHANGE 20240327
+" DOMA: LAST CHANGE 20260420 (cursor columns like in en)
 "
 " ------------------------- DEFAULT SETTINGS -----------------------------------
 set nocompatible                    " This must be first, because it changes other options as a side effect.
@@ -13,7 +13,8 @@ set shiftwidth=4
 set noexpandtab
 set smartindent
 set laststatus=2
-set nohlsearch
+" set nohlsearch
+set hlsearch
 set t_Co=256
 syntax on
 set termguicolors                   " added 20220922 to enable Hex color codes
@@ -22,6 +23,8 @@ set relativenumber
 set ignorecase
 set smartcase
 set colorcolumn=110
+" 20260420
+hi ColorColumn ctermbg=232 guibg='#3F4354'
 " from en 20220922
 set nowrap
 set wildmenu
@@ -353,8 +356,12 @@ nnoremap <leader>r :Ranger<CR>
 nnoremap <leader>s :s/ *;*$/;/<esc>j
 
 " ----------------- CROSSHAIR LOCATION ------------------------
-" set cursorline
-" set cursorcolumn
+" 20260420
+set cursorline
+set cursorcolumn
+hi CursorColumn cterm=NONE ctermbg=232 guifg=NONE guibg='#3F4354'
+hi CursorLine cterm=NONE ctermbg=232 guifg=NONE guibg='#3F4354'
+" staro:
 " hi CursorColumn cterm=NONE ctermbg=red ctermfg=white
 " hi CursorColumn cterm=NONE ctermbg=NONE ctermfg=red
 " hi CursorLine cterm=NONE cterm=underline ctermbg=NONE
