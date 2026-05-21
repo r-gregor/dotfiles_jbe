@@ -39,7 +39,7 @@ set wildmode=list:longest,full
 " for 'gq+ command 20251005:
 set textwidth=110
 set formatoptions-=t
-" set formatoptions+=l
+set formatoptions+=l
 
 
 " ============= OTHER SETTINGS ==============================================================================
@@ -521,6 +521,10 @@ vnoremap <space>dq xi""<ESC>h""p<ESC>
 nnoremap ,ds :s/\[.\+\]//g<CR>:noh<CR>
 vnoremap ,ds :s/\[.\+\]//g<CR>:noh<CR>
 
+" --- REMOVE '[...]' (DIGITS) IN CURRENT LINE OR SELECTION ---
+" 20260519
+nnoremap ,ds :s/\[.\+\]//g<CR>:noh<CR>
+vnoremap ,ds :s/\[.\+\]//g<CR>:noh<CR>
 
 " ================== COLORSCHEMES ==============================
 "
