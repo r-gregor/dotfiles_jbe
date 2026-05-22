@@ -100,10 +100,12 @@ autocmd Filetype python setlocal noexpandtab
 " --- STATUS BAR SETUP ---
 " added from: https://github.com/itchyny/lightline.vim
 " git clone https://github.com/itchyny/lightline.vim ~/.vim/pack/plugins/start/lightline
-let g:lightline = {
-      \ 'colorscheme': 'dracula',
-      \ }
+" let g:lightline = {
+"       \ 'colorscheme': 'dracula',
+"       \ }
 
+" --- 20260522 catpucin_ theme for lightline ---
+let g:lightline = {'colorscheme': 'catppuccin_mocha'}
 "
 
 " --- TOGGLE NUMBER/RELATIVENUMBER ---
@@ -167,6 +169,9 @@ Plug 'prabirshrestha/vim-lsp'
 Plug 'mattn/vim-lsp-settings'
 Plug 'prabirshrestha/asyncomplete.vim'
 Plug 'prabirshrestha/asyncomplete-lsp.vim'
+
+" 20260522
+Plug 'catppuccin/vim', { 'as': 'catppuccin' }
 
 call plug#end()
 
@@ -549,12 +554,16 @@ vnoremap ,ds :s/\[.\+\]//g<CR>:noh<CR>
 " colorscheme dracula
 " ---
 " literal:
-packadd! dracula
-syntax enable
-colorscheme dracula
+" packadd! dracula
+" syntax enable
+" colorscheme dracula
+
+" 20260522
+colorscheme catppuccin_mocha
 
 " added 20220922 to correct right background for Dracula CS
-hi Normal ctermbg='282a36'
+" hi Normal ctermbg='282a36'
+hi Normal ctermbg='000000'
 
 
 " --- EDGE COLOR THEME ---
