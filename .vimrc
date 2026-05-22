@@ -403,7 +403,7 @@ vnoremap <Space>4 :s/^\$ /$> /<CR><CR>
 
 
 " --- FILE MANAGERS ---
-nnoremap <leader>n :NERDTree<CR>
+nnoremap <leader>n :NERDTreeToggle<CR>
 nnoremap <leader>ff :FZF<CR>
 nnoremap <leader>fe :FZF -e<CR>
 
