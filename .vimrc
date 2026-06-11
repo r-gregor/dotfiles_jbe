@@ -348,7 +348,7 @@ nnoremap <F5> :NERDTreeToggle<CR>
 
 " enable Rainbow globally
 " enable Rainbow globally 20210813
-let g:rainbow_active = 1
+" let g:rainbow_active = 1
 
 
 " --- VIM'S FILE EXPLORER (Netrw) ---
