@@ -149,7 +149,7 @@ hi CursorLine cterm=NONE ctermbg=232 guifg=NONE guibg='#3F4354'
 " =========== PLUGGINS (vim=plug) ===========================================================================
 call plug#begin('~/.vim/plugged')
 Plug 'preservim/nerdtree'
-Plug 'frazrepo/vim-rainbow'
+" Plug 'frazrepo/vim-rainbow'
 Plug 'francoiscabrol/ranger.vim'
 Plug 'tomasiser/vim-code-dark'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
