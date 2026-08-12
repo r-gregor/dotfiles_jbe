@@ -545,6 +545,13 @@ nnoremap ,dt "=strftime('%Y%m%d')<cr>P<cr>
 inoremap ,dt <c-r>=strftime('%Y%m%d')<cr>
 vnoremap ,dt <c-r>=strftime('%Y%m%d')<cr>
 
+" 20260812
+" write and close buffer
+noremap ,wd :w <bar> :bd<cr>
+" or:
+" noremap ,wd :w \| :bd<cr>
+
+
 " ================== COLORSCHEMES ==============================
 "
 " --- DRACULA COLOR THEME ---
