@@ -551,6 +551,13 @@ noremap ,wd :w <bar> :bd<cr>
 " or:
 " noremap ,wd :w \| :bd<cr>
 
+" 20260820
+" change from 'nonmodifiable' to 'modifiable'
+noremap ,mf :set modifiable<CR>
+
+" change from 'modifiable' to 'nonmodifiable'
+noremap ,nf :set nomodifiable<CR>
+
 
 " ================== COLORSCHEMES ==============================
 "
