@@ -90,10 +90,12 @@ set listchars+=trail:⋅
 nnoremap <space>. :set listchars+=space:⋅ <CR>
 nnoremap <space>, :set listchars-=space:⋅ <CR>
 
-" 20260911
-" hide/display tab character
+" --- HIDE/DISPLAY TAB CHARACTE ---
 nnoremap <SPACE>0 :set listchars=tab:\ \ ,nbsp:·<CR>
 nnoremap <SPACE>t :set listchars=tab:┊⋅<CR>
+" 20260911
+
+
 " === PYTHON SETTINGS ===
 autocmd Filetype python setlocal noexpandtab
 
@@ -130,6 +132,7 @@ function! NumberToggle()
 	endif
 endfunction
 
+" --- TOGGLE NUMBER/RELATIVENUMBER ---
 nnoremap ,n :call NumberToggle()<CR>
 
 " --- CROSSHAIR LOCATION ---
@@ -258,27 +261,24 @@ inoremap [[[ [[]]<ESC>hli
 
 
 " --- BREAK LINE AT POSITION 110 CHARS ---
-" 0110lbikba
 nnoremap ,b 0110lbi<BS><CR><ESC>
+" 0110lbikba
 
 
 " --- MOVE LINE UNDER THE CURSOR INSIDE [] ---
-" 20250314
 noremap ,ss 0vg_xi[<c-r>"]<esc>j<cr>
 
 " --- MAPPING TO INSERT FILE SEARCH ---
 inoremap <C-f> <C-x><C-f>
 
 " --- MOVE LINE UNDER THE CURSOR INSIDE [] ---
-" 20250314
 noremap ,ss 0vg_xi[<c-r>"]<esc>j<cr>
 
-" --- QUOTING: automatic ---
-" 20201224: add/remove quotes arround the word:
-" Quote a word consisting of letters from iskeyword.
+" --- ADD/REMOVE QUOTES ARROUND THE WORD ---
 nnoremap <silent> ,dq :call Quote('"')<CR>
 nnoremap <silent> ,sq :call Quote("'")<CR>
 nnoremap <silent> ,uq :call UnQuote()<CR>
+
 function! Quote(quote)
 	normal mz
 	exe 's/\(\k*\%#\k*\)/' . a:quote . '\1' . a:quote . '/'
@@ -297,16 +297,10 @@ let mapleader = " "
 
 
 " --- SEARCH AND REPLACE [12] AND [123] WITH CONFIRMATION ---
-" ADDED 20210226
-" search for [12] or [123] troughout a file 
-" and ask to deete it --> maped to ,d <comma+d> 
 nnoremap ,d :%s/\[\d\+]//gc
 
 
 " --- COMMENT/UNCOMMENT VISUALLY SELECTED BLOCK ---
-" added 20210622
-" vnoremap ,pt :s@^@# @<CR>
-" updated (d) 20221116
 vnoremap ,pt :s@\(^\s*\)\(.*\)@\1# \2@<CR>
 vnoremap ,pu :s@\(^\s*\)# @\1@<CR>
 vnoremap ,jv :s@\(^\s*\)\(.*\)@\1// \2@<CR>
@@ -327,28 +321,18 @@ vnoremap ,t :s/\(\t\+\) */\1/g<CR>
 
 
 " --- c-STYLE COMMENT OUT VISUAL BLOCK  ---
-" 20211101
-" upodated (d) 20221116
 vnoremap ,cc :s/^/ * /<CR>gv"xdO/*<CR><ESC>0C */<ESC>k"xp<CR>
 vnoremap ,cu :s/^ \* //<CR>gv"0dddkdd"0P<CR>
 
 
-" --- ENCLOSE VISUAL SELECTION ---
-" added 20210629
-" between <code></code> tags
+" --- ENCLOSE VISUAL SELECTION BETWEEN <code></code> TAGS
 vnoremap ,cd di<code><CR></code><CR><ESC>kP?<code><CR>:s@.*\(<code>\)@\1@<CR>/</code><CR>:s@.*\(</code>\)@\1@<CR>j
 
 
 " --- SHIFT TAB AND REMOVE SPACES ---
-" added 20211105
 vnoremap ,rr >gv:s/\(\t\+\) \+/\1/g<CR>
 
 " --- CLONE CURRENT LINE OR SELLECTION ---
-" added 20240327
-" clone current line or selection and:
-"        - normal mode: paste it under current line
-"        - visual selection: paste it over current line, but select lower selection block
-"
 noremap <leader>c yyp
 vnoremap <leader>c yPgv
 
@@ -360,26 +344,19 @@ nnoremap <F5> :NERDTreeToggle<CR>
 
 
 " --- VIM'S FILE EXPLORER (Netrw) ---
-" 20210813: vim's file explorer (Netrw) in left column of size 30 (close with :bd)
 nnoremap <leader>pv :wincmd v<bar> :Ex <bar> :vertical resize 30<CR>
 
 
 " --- RANGER SETTINGS ---
-" 20210813
 let g:ranger_map_keys = 0
 nnoremap <leader>r :Ranger<CR>
 
 
-" --- REPLACE SPCES BEFOR ; AT THE END OF THE LINE ---
-" mapping to replace spaces and semicolon or just spaces
-" at the end of the line:
-" effect: single ; at the end of text remains
+" --- REPLACE SPACES BEFOR ; AT THE END OF THE LINE ---
 nnoremap <leader>s :s/ *;*$/;/<esc>j
 
 
 " --- BREAK THE SENTENCE AT WORD BEGINNING AT 110 CHARS ---
-" break the sentence at word beginning at 110 chars
-" and movi the beginning of the rest to thr next line
 nnoremap <leader>b 0110lbi<BS><CR><ESC>
 
 
@@ -395,7 +372,6 @@ nnoremap <leader>b 0110lbi<BS><CR><ESC>
 
 
 " --- MOVE ENTIRE LINES up AND down ---
-" to enter instead of Alt key --> SPACE key
 nnoremap <Space>j :m.+1<CR>==
 nnoremap <Space>k :m.-2<CR>==
 vnoremap <Space>j :m'>+1<CR>gv=gv
@@ -403,7 +379,6 @@ vnoremap <Space>k :m'<-2<CR>gv=gv
 
 
 " --- REPLACE START OF THE LINE WITH '$> ' PROMPT ---
-" 20220408
 nnoremap ,4 :s/^/$> /<CR><CR>
 vnoremap ,4 :s/^/$> /<CR><CR>
 nnoremap <Space>4 :s/^\$ /$> /<CR><CR>
@@ -417,52 +392,41 @@ nnoremap <leader>fe :FZF -e<CR>
 
 
 " --- REPLACES TABS TO 4 SPACES IN VISUAL BLOCK ---
-" added 20220926
-" whole lines -> <shift+v>
-" block       -> <ctrl+v>
 vnoremap <C-t> :s/\%V\t/    /g<CR>
 
 
 " --- REMOVES LAGGING WHEN EDITING *.h FILES ---
-" added 20231004
 set synmaxcol=250
 nnoremap <leader>st :syntax off<CR>:syntax on<CR>
 
 
 " --- ACCEPT TERMINAL BACKGROUND IMAGE kitty.conf ---
-" 20240310
 hi Normal guibg=NONE ctermbg=NONE
 
 
 " --- MOVE LINE UNDER THE CURSOR INSIDE [] ---
-" 20250314
 noremap ,ss 0vg_xi[<c-r>"]<esc>j<cr>
 
 "
 " --- COPY HTTP LINK INTO THE [NUMBER] HOLDER FOR THE LINK AFTER LYXD_ED DOCUMENT ---
-" 20250515
+noremap ,lc fhvg_y<C-o>ci[<C-r>0<ESC>
 " 1 - go inside '[' ']'
 " 2 - <c-o> to go to coresponding link at the bottom
 " 3 - pres ,lc to do the magic ...
-noremap ,lc fhvg_y<C-o>ci[<C-r>0<ESC>
 
 
 " --- OPEN ALL BUFFERS INTO SEPARATE TABS ---
-" 20251114
 map ,bt :bufdo tab split<CR><CR>
 
 
 " --- TABLE ROW DIVIDERS ---
-" 20251127
 noremap ,tr 0yyjp}P<ESC>j
 
 
 " --- MOVE '{' AFTER 'FUNC() ' ---
-" 20251205
 noremap <space>f jddkA {<ESC>
 
 " --- SET SYNTAX MAPPINGS ---
-" 20251210
 noremap <space>ss :set syntax=<CR>
 noremap <space>ssh :set syntax=sh<CR>
 noremap <space>ssc :set syntax=c<CR>
@@ -474,97 +438,78 @@ noremap <SPACE>ssv :set syntax=vim<CR>
 
 
 " --- INDENT/FORMAT main{} BLOCK ---
+nnoremap <space>0 0Vf{%=gv:s/\(\t\+\) \+/\1/g<CR>
 " 20251223
 " select whole 'main() { ... }' block, formate it with '=' and
 " replace 4 spaces with tabs
-nnoremap <space>0 0Vf{%=gv:s/\(\t\+\) \+/\1/g<CR>
 
 
 " --- INITIAL CONFIG SOURCE AND SYNTAX SETUP ---
-" 20260114
-" 20260119
-" nnoremap <space>v :so ~/.vimrc <BAR> set syntax=c<CR>
 nnoremap <space>v :so ~/.vimrc <BAR> set syntax=c <BAR> :noh<CR>
 
 
 " --- MOVE LINE UNDER THE CURSOR INSIDE [] ---
-" 20260210
-" move line under the cursor inside []
-" move selected text into []
 nnoremap ,sb 0vg_xi[<c-r>"]<esc>j<cr>
 vnoremap ,sb xi[]<ESC>h""p<ESC>
 
 
 " --- CHANGE BUFFER TO FILE FROM LIST ---
-" 20260210
+nnoremap <Leader>b :buffers<CR>:buffer<Space>
 " from:
 " vim-working-with-buffers-multif-5ppp-20260210.txt
 " https://builtin.com/articles/working-with-buffers-in-vim
-nnoremap <Leader>b :buffers<CR>:buffer<Space>
 
 
-" --- SEARCH IN VIM'S FILE EDIT HISTROY AND OPEN IT FOR EDIT/VIEW ---
-" 20260211
-" must enter colon ':' and add a line number
+" --- SEARCH IN VIM'S FILE EDIT HISTORY AND OPEN IT FOR EDIT/VIEW ---
 nnoremap <leader>oo :oldfiles<CR>e #<
+" must enter colon ':' and add a line number
 
 " --- REPLACE LEADING 4 SPACES TO TABS ---
-" 20260219 replace leading 4 spaces to tabs
 nnoremap <space>4t :%s/\(^\s*\)\@<=    /\t/g<CR><BAR>:noh<CR>
 vnoremap <space>4t :s/\(^\s*\)\@<=    /\t/g<CR><BAR>:noh<CR>
 
 " --- REPLACE LEADING 2 SPACES TO TABS ---
-" 20260612 replace leading 2 spaces to tabs
 nnoremap <space>2t :%s/\(^\s*\)\@<=  /\t/g<CR><BAR>:noh<CR>
 vnoremap <space>2t :s/\(^\s*\)\@<=  /\t/g<CR><BAR>:noh<CR>
 
 
 " --- REPLACE SINGLE QUOTE INSIDE WORDS WITH APOSTROPHE COMMAND ---
-" 20260311
 nnoremap <space>9 :%s/\([[:alpha:]]\)'\([[:alpha:]]\)/\1´\2/g<CR><BAR>:noh<CR>
 
 
 " --- RETAB VISUAL SELLECTION ---
-" 20260317
 vnoremap ,rt :retab!<CR>
 
 
 " --- MOVE SELECTED TEXT BETWEEN '', OR BETWEEN "" ---
-" 20260317
 vnoremap <space>sq xi''<ESC>h""p<ESC>
 vnoremap <space>dq xi""<ESC>h""p<ESC>
 
 " --- REMOVE ALL '[DIGITS]' IN CURRENT LINE OR IN VISUAL SELLECTIOM ---
-" 20260519
 nnoremap ,ds :s/\[.\+\]//g<CR>:noh<CR>
 vnoremap ,ds :s/\[.\+\]//g<CR>:noh<CR>
 
 " --- REMOVE '[...]' (DIGITS) IN CURRENT LINE OR SELECTION ---
-" 20260519
 nnoremap ,ds :s/\[.\+\]//g<CR>:noh<CR>
 vnoremap ,ds :s/\[.\+\]//g<CR>:noh<CR>
 
-" 20260807
-" insert datestamp 'YYYYmmdd'
+" --- INSERT DATESTAMP 'yyyyMMDD' ---
 nnoremap ,dt "=strftime('%Y%m%d')<cr>P<cr>
 inoremap ,dt <c-r>=strftime('%Y%m%d')<cr>
 vnoremap ,dt <c-r>=strftime('%Y%m%d')<cr>
 
-" 20260812
-" write and close buffer
+" --- WRITE AND CLOSE BUFFE ---
 noremap ,wd :w <bar> :bd<cr>
 " or:
 " noremap ,wd :w \| :bd<cr>
 
-" 20260820
-" change from 'nonmodifiable' to 'modifiable'
+" --- CHANGE FROM 'NONMODIFIABLE' TO 'MODIFIABLE' ---
 noremap ,mf :set modifiable<CR>
 
-" change from 'modifiable' to 'nonmodifiable'
+" --- CHANGE FROM 'MODIFIABLE' TO 'NONMODIFIABLE' ---
 noremap ,nf :set nomodifiable<CR>
 
-" 20260831
-" put sellection inside double or single quotes
+" --- PUT SELLECTION INSIDE DOUBLE OR SINGLE QUOTE ---
 vnoremap 1q c''<esc>hp
 vnoremap 2q c""<esc>hp
 
