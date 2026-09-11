@@ -39,6 +39,7 @@ exec --no-startup-id nm-applet
 exec --no-startup-id volumeicon
 exec --no-startup-id xfce4-pulseaudio-plugin
 exec_always --no-startup-id xfce4-power-manager
+exec --no-startup-id numlockx on
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status

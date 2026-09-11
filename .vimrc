@@ -90,6 +90,10 @@ set listchars+=trail:⋅
 nnoremap <space>. :set listchars+=space:⋅ <CR>
 nnoremap <space>, :set listchars-=space:⋅ <CR>
 
+" 20260911
+" hide/display tab character
+nnoremap <SPACE>0 :set listchars=tab:\ \ ,nbsp:·<CR>
+nnoremap <SPACE>t :set listchars=tab:┊⋅<CR>
 " === PYTHON SETTINGS ===
 autocmd Filetype python setlocal noexpandtab
 
@@ -243,7 +247,7 @@ noremap ,stz :so ~/.vimrc <bar> :set syntax=zig<CR>
 noremap ,stp :so ~/.vimrc <bar> :set syntax=python<CR>
 noremap ,stc :so ~/.vimrc <bar> :set syntax=c<CR>
 noremap ,stj :so ~/.vimrc <bar> :set syntax=java<CR>
-
+noremap ,stv :so ~/.vimrc <BAR> :set syntax=vim<CR>
 
 " --- ENCLOSING BRACKETS/SQUARE/CURLY ---
 inoremap ${{ ${}<ESC>hli
@@ -466,6 +470,7 @@ noremap <space>sst :set syntax=text<CR>
 noremap <space>ssj :set syntax=java<CR>
 noremap <space>ssp :set syntax=python<CR>
 noremap <space>ssg :set syntax=go<CR>
+noremap <SPACE>ssv :set syntax=vim<CR>
 
 
 " --- INDENT/FORMAT main{} BLOCK ---
