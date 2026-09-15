@@ -438,7 +438,7 @@ noremap <SPACE>ssv :set syntax=vim<CR>
 
 
 " --- INDENT/FORMAT main{} BLOCK ---
-nnoremap <SPACE>0 0Vf{%=gv:s/\(\t\+\) \+/\1/g<CR>
+nnoremap <SPACE>= 0Vf{%=gv:s/\(\t\+\) \+/\1/g<CR>
 " 20251223
 " select whole 'main() { ... }' block, formate it with '=' and
 " replace 4 spaces with tabs
