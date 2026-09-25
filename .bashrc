@@ -124,6 +124,18 @@ if ! shopt -oq posix; then
   fi
 fi
 
+# === PERSONAL GLOBALS ===
+export HST="jbe"
+export HSTLONG="muadib"
+export PG_MJSTF="${HOME}/majstaf"
+export PG_MJBN="${PG_MJSTF}/majbin"
+export PG_GIT="${PG_MJSTF}/${HST}git"
+
+export GT_STATUS_REPORTS="${HOME}/.tmp/GT_STATUS_REPORTS"
+export GT_TPUSH_REPORTS="${HOME}/.tmp/GT_TPUSH_REPORTS"
+export TESTING_STATUS_REPORTS="${HOME}/.tmp/TESTING_STATUS_REPORTS"
+export TESTING_TPUSH_REPORTS="${HOME}/.tmp/TESTING_TPUSH_REPORTS"
+
 # --- added 20230123
 source /home/rgregor/majstaf/majrcs/aliases-jbez0rg
 # source /home/rgregor/majstaf/majrcs/aliases-jbez0rg-fish
@@ -148,8 +160,8 @@ source ~/majstaf/majrcs/bashrc-prompt-bare-jbez0rg
 # 20250424
 eval "$(zoxide init bash)"
 
-export JBEGIT_STATUS_REPORTS="${HOME}/.tmp/JBEGIT_STATUS_REPORTS"
-export JBEGIT_TPUSH_REPORTS="${HOME}/.tmp/JBEGIT_TPUSH_REPORTS"
-export TESTING_STATUS_REPORTS="${HOME}/.tmp/TESTING_STATUS_REPORTS"
-export TESTING_TPUSH_REPORTS="${HOME}/.tmp/TESTING_TPUSH_REPORTS"
+# export JBEGIT_STATUS_REPORTS="${HOME}/.tmp/JBEGIT_STATUS_REPORTS"
+# export JBEGIT_TPUSH_REPORTS="${HOME}/.tmp/JBEGIT_TPUSH_REPORTS"
+# export TESTING_STATUS_REPORTS="${HOME}/.tmp/TESTING_STATUS_REPORTS"
+# export TESTING_TPUSH_REPORTS="${HOME}/.tmp/TESTING_TPUSH_REPORTS"
 
