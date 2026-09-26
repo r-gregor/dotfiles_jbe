@@ -135,6 +135,7 @@ export GT_STATUS_REPORTS="${HOME}/.tmp/GT_STATUS_REPORTS"
 export GT_TPUSH_REPORTS="${HOME}/.tmp/GT_TPUSH_REPORTS"
 export TESTING_STATUS_REPORTS="${HOME}/.tmp/TESTING_STATUS_REPORTS"
 export TESTING_TPUSH_REPORTS="${HOME}/.tmp/TESTING_TPUSH_REPORTS"
+export CLPBRDMNGR='/usr/bin/xclip'
 
 # --- added 20230123
 source /home/rgregor/majstaf/majrcs/aliases-jbez0rg
