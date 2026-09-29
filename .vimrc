@@ -218,8 +218,8 @@ let g:move_key_modifier_visualmode = 'S'
 " ================= ABBREVIATIONS ===========================================================================
 " ab sbng #! /usr/bin/env bash<CR><CR><ESC>:so ~/.vimrc <BAR> :set syntax=bash
 " updated 20250807: insert datestamp
-ab sbng #! /usr/bin/env bash<CR># fname: <C-R><CR># <C-R>=strftime('%Y%m%d')<CR> v1<CR># ---<CR><ESC>:so ~/.vimrc <BAR> :set syntax=bash
-
+# ab sbng #! /usr/bin/env bash<CR># fname: <C-R><CR># <C-R>=strftime('%Y%m%d')<CR> v1<CR># ---<CR><ESC>:so ~/.vimrc <BAR> :set syntax=bash
+ab sbng #! /usr/bin/env bash<CR># fname: <C-R>%<CR># descpt: <CR># <C-R>=strftime('%Y%m%d')<CR> v1<CR># last: <CR># ---<CR><ESC>:so ~/.vimrc <BAR> :set syntax=bash
 
 ab pt3 #! /usr/bin/env python3<CR># -*- coding: utf-8 -*-<CR><CR><ESC>:so ~/.vimrc <BAR> :set syntax=python
 ab zst const std = @import("std");<CR><CR>pub fn main() !void {<CR>const out = std.io.getStdOut().writer();<CR>const in = std.io.getStdiIn().reader();<CR><CR>try out.print("I'm Alive!\n", .{});<CR><CR>}<CR><ESC>:so ~/.vimrc <BAR> :set syntax=zig
@@ -512,6 +512,11 @@ noremap ,nf :set nomodifiable<CR>
 " --- PUT SELLECTION INSIDE DOUBLE OR SINGLE QUOTE ---
 vnoremap 1q c''<ESC>hp
 vnoremap 2q c""<ESC>hp
+
+" --- PUT ${} INSIDE DOUBLE QUOTES ---
+noremap ,qq i"<ESC>f{%a"<ESC>
+
+
 
 " ================== COLORSCHEMES ==============================
 "
