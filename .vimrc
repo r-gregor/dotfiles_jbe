@@ -209,16 +209,70 @@ let g:move_key_modifier_visualmode = 'S'
 " let g:monochrome_italic_comments = 1
 " colorscheme monochrome
 
+" ================== COLORSCHEMES ==============================
+" --- DRACULA COLOR THEME ---
+" ADDED 20210127
+" from: https://draculatheme.com/vim
+"
+" Install (Vim):
+" These are the default instructions using Vim 8's |packages| feature. See sections below, if you use other plugin managers.
+"     Create theme folder (in case you don't have yet):
+" mkdir -p ~/.vim/pack/themes/start
+" If you use vim 8.0 (and not 8.2), you may need to use ~/.vim/pack/themes/opt instead.
+"     Navigate to the folder above:
+" cd ~/.vim/pack/themes/start
+"     Clone the repository using the "dracula" name:
+" git clone https://github.com/dracula/vim.git dracula
+"     Create configuration file (in case you don't have yet):
+" touch ~/.vimrc
+"     Edit the ~/.vimrc file with the following content:
+" packadd! dracula
+" syntax enable
+" colorscheme dracula
+" ---
+" literal:
+" packadd! dracula
+" syntax enable
+" colorscheme dracula
+
+" 20260522
+colorscheme catppuccin_mocha
+
+" added 20220922 to correct right background for Dracula CS
+" hi Normal ctermbg='282a36'
+hi Normal ctermbg='000000'
 
 
+" --- EDGE COLOR THEME ---
+" let g:edge_style = 'neon'
+" let g:edge_enable_italic = 1
+" let g:edge_disable_italic_comment = 1
+" colorscheme edge
 
 
+" --- SWITCH COLORSCHEMES ---
+" added: 20210127
+" from https://vim.fandom.com/wiki/Switch_color_schemes
+" :source ~/.vim/setcolors.vim
+" :SetColors all
+" :colors <colorscheme name>
+" ... switch to next F8; switch to previous <SHIFT>+F8
+
+
+" from Plugin vim-code-dark
+" colorscheme codedark
+
+
+" ----------------- COLOR SETTINGS FINAL (IF NO OTHER WORKS) ---------
+" colorscheme simple-dark
+" colorscheme nord
+" colorscheme Mustang
+" colorscheme wombat256mod
 
 
 " ================= ABBREVIATIONS ===========================================================================
 " ab sbng #! /usr/bin/env bash<CR><CR><ESC>:so ~/.vimrc <BAR> :set syntax=bash
 " updated 20250807: insert datestamp
-# ab sbng #! /usr/bin/env bash<CR># fname: <C-R><CR># <C-R>=strftime('%Y%m%d')<CR> v1<CR># ---<CR><ESC>:so ~/.vimrc <BAR> :set syntax=bash
 ab sbng #! /usr/bin/env bash<CR># fname: <C-R>%<CR># descpt: <CR># <C-R>=strftime('%Y%m%d')<CR> v1<CR># last: <CR># ---<CR><ESC>:so ~/.vimrc <BAR> :set syntax=bash
 
 ab pt3 #! /usr/bin/env python3<CR># -*- coding: utf-8 -*-<CR><CR><ESC>:so ~/.vimrc <BAR> :set syntax=python
@@ -516,66 +570,18 @@ vnoremap 2q c""<ESC>hp
 " --- PUT ${} INSIDE DOUBLE QUOTES ---
 noremap ,qq i"<ESC>f{%a"<ESC>
 
+" --- CONVERT ALL '$varname' to '${varname}' ---
+nnoremap ,bb :%s/\$\([[:alpha:]]\+\)/${\1}/g<CR>
 
+" --- CONVERT SINGLE '$varname' to '${varname}' ---
+nnoremap ,cb a{<ESC>ea}<ESC>
 
-" ================== COLORSCHEMES ==============================
-"
-" --- DRACULA COLOR THEME ---
-" ADDED 20210127
-" from: https://draculatheme.com/vim
-"
-" Install (Vim):
-" These are the default instructions using Vim 8's |packages| feature. See sections below, if you use other plugin managers.
-"     Create theme folder (in case you don't have yet):
-" mkdir -p ~/.vim/pack/themes/start
-" If you use vim 8.0 (and not 8.2), you may need to use ~/.vim/pack/themes/opt instead.
-"     Navigate to the folder above:
-" cd ~/.vim/pack/themes/start
-"     Clone the repository using the "dracula" name:
-" git clone https://github.com/dracula/vim.git dracula
-"     Create configuration file (in case you don't have yet):
-" touch ~/.vimrc
-"     Edit the ~/.vimrc file with the following content:
-" packadd! dracula
-" syntax enable
-" colorscheme dracula
-" ---
-" literal:
-" packadd! dracula
-" syntax enable
-" colorscheme dracula
+" --- CHANGE 'echo ' into 'printf ' ---
+" pp: echo "..."      --> printf "[i] ... \n"
+" pf: echo "..."      --> printf " ... \n"
+" pe: echo -e "...\n" --> printf " ... \n"
+nnoremap <LEADER>pp ^ciwprintf<ESC>f"a[i] <ESC>f"i\n<ESC>j
+nnoremap <LEADER>pf ^ciwprintf<ESC>$i\n<ESC>j
+nnoremap <LEADER>pe ^vt"cprintf <ESC>j
 
-" 20260522
-colorscheme catppuccin_mocha
-
-" added 20220922 to correct right background for Dracula CS
-" hi Normal ctermbg='282a36'
-hi Normal ctermbg='000000'
-
-
-" --- EDGE COLOR THEME ---
-" let g:edge_style = 'neon'
-" let g:edge_enable_italic = 1
-" let g:edge_disable_italic_comment = 1
-" colorscheme edge
-
-
-" --- SWITCH COLORSCHEMES ---
-" added: 20210127
-" from https://vim.fandom.com/wiki/Switch_color_schemes
-" :source ~/.vim/setcolors.vim
-" :SetColors all
-" :colors <colorscheme name>
-" ... switch to next F8; switch to previous <SHIFT>+F8
-
-
-" from Plugin vim-code-dark
-" colorscheme codedark
-
-
-" ----------------- COLOR SETTINGS FINAL (IF NO OTHER WORKS) ---------
-" colorscheme simple-dark
-" colorscheme nord
-" colorscheme Mustang
-" colorscheme wombat256mod
 
