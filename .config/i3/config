@@ -126,7 +126,7 @@ bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
+bindsym $mod+t layout tabbed
 bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
@@ -270,6 +270,8 @@ bindsym $alt+Ctrl+f exec --no-startup-id /home/rgregor/.local/bin/floatings-dmn
 bindsym $alt+Ctrl+t exec --no-startup-id /home/rgregor/.local/bin/floatings-rofi
 bindsym $alt+Ctrl+z exec --no-startup-id /usr/bin/zenity --calendar
 bindsym $alt+Ctrl+w exec --no-startup-id /usr/bin/thunar
+bindsym $mod+w exec --no-startup-id /usr/bin/rofi -show window
+
 # enable enter password window
 # window after sudo apt install lxpolkit
 exec_always --no-startup-id lxpolkit
