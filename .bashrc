@@ -145,7 +145,6 @@ source /home/rgregor/majstaf/majrcs/barve
 source /home/rgregor/majstaf/majrcs/bashrc-jbez0rg
 source /home/rgregor/majstaf/majrcs/funclist-jbe
 source /home/rgregor/majstaf/majrcs/peesena
-source /home/rgregor/majstaf/majrcs/vars-jbez0rg
 source /home/rgregor/majstaf/majrcs/xcol_bash.sh
 
 . "$HOME/.cargo/env"
