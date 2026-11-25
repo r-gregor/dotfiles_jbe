@@ -448,7 +448,7 @@ nnoremap <LEADER>fe :FZF -e<CR>
 
 
 " --- REPLACES TABS TO 4 SPACES IN VISUAL BLOCK ---
-vnoremap >C-T> :s/\%V\t/    /g<CR>
+vnoremap <C-T> :s/\%V\t/    /g<CR>
 
 
 " --- REMOVES LAGGING WHEN EDITING *.h FILES ---
